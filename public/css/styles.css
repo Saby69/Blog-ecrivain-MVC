@@ -1,0 +1,25 @@
+.bg-primary {
+    background-color: #395BBC!important;
+}
+.text-primary {
+  color:  #395BBC !important; }
+
+a {
+  color:  #395BBC; }
+  a:hover, a:focus, a:active {
+    color: #824027; }
+
+section {
+	padding-left: 200px !important;
+	padding-right: 
+}
+
+#lienblanc a {
+	color: white !important; 
+
+}
+
+.error {
+	color: red !important;
+}
+
