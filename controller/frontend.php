@@ -1,23 +1,25 @@
 <?php
+require('view/frontend/frontendView.php');
 
-require_once('view/frontend/frontendView.php'); 
-/*require_once ('model/CommentManager.php');
+require_once('model/PostManager.php'); 
+//require_once ('model/CommentManager.php');
 
 function listPosts() {
-	$postManager = new \OpenClassrooms\Blog\Model\PostManager();
+	$postManager = \blog_ecrivain_jf\model\PostManager();
 	$posts = $postManager->getPosts();
 	require('view/frontend/listPostsView.php');
 }
 
-function post() {
-	$postManager = new \OpenClassrooms\Blog\Model\Postmanager();
-	$commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+/*function post() {
+	$postManager = new \blog_ecrivain_jf\model\Postmanager();
+	//$commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
 	$post = $postManager->getPost($_GET['id']);
-	$comments = $commentManager->getComments($_GET['id']);
+	//$comments = $commentManager->getComments($_GET['id']);
 	
 	require('view/frontend/postView.php');
 
 }
+
 
 function addComment($postId, $author, $comment) {
 	$commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
@@ -46,3 +48,4 @@ function newComment($commentId, $upComment, $postId) {
 }*/
 
 ?>
+

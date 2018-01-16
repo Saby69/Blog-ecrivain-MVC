@@ -14,25 +14,18 @@
         <ul class="navbar-nav">
           
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="episodes.php">Episodes</a>
+            <a class="nav-link js-scroll-trigger" href="index.php?action=post">Episodes</a>
           </li>
           <li class="nav-item">
           	
-          	<?php try {
-    $bdd = new PDO('mysql:host=localhost; dbname=blog-jf-ecrivain; charset=utf8', 'root', '');
-  }
-
-  catch(exeption $e) {
-    die('erreur : ' . $e -> getMessage());
-  }
-          		$reponse = $bdd->query('SELECT id, title FROM episodes');
-            while ($liste_chapitres = $reponse->fetch()) 
+          	<?php /*
+            while ($liste_chapitres = $posts->fetch()) 
             { ?> 
             	<a href="article.php?recupid=<?php echo $liste_chapitres['id']; ?>" style="color:white;"><?php echo htmlspecialchars($liste_chapitres['title']) ?> </a> <br />
               <?php
             }
-            $reponse->closeCursor();
-            ?>
+            
+            */?>
            </li>
           
         </ul>
