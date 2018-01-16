@@ -1,19 +1,56 @@
 
-	 <?php require("header.php"); ?>
-	 <div class="container-fluid p-0">
+	<?php
+	require('controller/frontend.php');
 
-      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-        <div class="my-auto">
-          <h1 class="mb-0">Jean
-            <span class="text-primary">Forteroche</span>
-          </h1>
-          <div class="subheading mb-5">Acteur et écrivain
-            <a href="mailto:name@email.com">contact@email.com</a>
-          </div>
-          <p class="mb-5">Bienvenue sur mon nouveau site dédié à mon nouveau roman :</p>
-          <h1>Billet simple pour l'Alaska</h1>
-          
-        </div>
-      </section>
-</div>
-<?php require ("footer.php");?>
+/*try {
+		if (isset($_GET['action'])) {
+			if ($_GET['action'] == 'listPosts') {
+			listPosts();	
+			}
+			elseif ($_GET['action'] == 'post') {
+				if (isset($_GET['id']) && $_GET['id'] > 0) {
+					post();
+				}
+				else {
+					throw new Exception('aucun identifiant de billet envoyé');
+				}
+			}
+			elseif ($_GET['action'] == 'addComment') {
+				if (isset($_GET['id']) && $_GET['id'] > 0) {
+					if (!empty($_POST['author']) && !empty($_POST['comment'])) {
+						addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+					}
+					else {
+						throw new Exception('tous les champs ne sont pas remplis !');
+					}
+				}
+				else {
+					throw new Exception('aucun identifiant de billet envoyé');
+				}
+			}
+			elseif ($_GET['action'] == 'newComment') {
+				if (isset($_GET['id']) && $_GET['id'] > 0) {
+					if (!empty($_POST['comment'])) {
+					newComment($_GET['id'], $_POST['comment']);
+					}
+					else {
+						throw new Exception('Le champs n\'est pas remplis !');
+					}
+				}
+				else {
+					throw new Exception('Aucun identifiant !');
+				}	
+				
+			}
+
+			
+		}
+		else {
+			listPosts();
+		}
+	}
+	catch(Exception $e)  {
+		$errorMessage = $e->getMessage();
+		require('view/frontend/errorView.php');
+	}
+*/

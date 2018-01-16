@@ -1,6 +1,8 @@
 <section class="footer id="footer">
 	<div class = "row">
-			<div class="col-lg-1"></div>
+			<div class="col-lg-1">
+        
+      </div>
             <div class="col-lg-7">
               <a href="#">
                 <span class="fa-stack fa-lg">
@@ -13,4 +15,5 @@
                	<a href="login.php">Connection</a>
             </div>
 
-</ul>
+      </div>
+</section>
