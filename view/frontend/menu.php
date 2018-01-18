@@ -1,5 +1,6 @@
 
- 
+ <?php
+  //require('controller/frontend.php'); ?>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Menu</span>
@@ -14,7 +15,7 @@
         <ul class="navbar-nav">
           
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="index.php?action=post">Episodes</a>
+            <a class="nav-link js-scroll-trigger" href="index.php?action=listPosts>">Episodes</a>
           </li>
           <li class="nav-item">
           	
