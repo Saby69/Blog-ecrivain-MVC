@@ -1,5 +1,5 @@
 <?php
-namespace blog_ecrivain_jf\model;
+//namespace blog_ecrivain_jf\model;
 
 class Manager {
 	protected function dbConnect() {

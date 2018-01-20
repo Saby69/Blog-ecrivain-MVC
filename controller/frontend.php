@@ -1,38 +1,57 @@
 <?php
-require('view/frontend/frontendView.php');
+
 
 require_once('model/PostManager.php'); 
-//require_once ('model/CommentManager.php');
+require_once('model/CommentManager.php');
 
 function listPosts() {
-	$postManager = \blog_ecrivain_jf\model\PostManager();
+	$postManager = new PostManager();
 	$posts = $postManager->getPosts();
 	require('view/frontend/listPostsView.php');
 }
 
-/*function post() {
-	$postManager = new \blog_ecrivain_jf\model\Postmanager();
-	//$commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+function index() {
+	$postManager = new PostManager();
+	$posts = $postManager->getPosts();
+	require('view/frontend/frontendView.php');
+
+}
+
+/*function menu() {
+	$postManager = new PostManager();
+	//$commentManager = new CommentManager();
+	//$posts = $postManager->getPosts();
 	$post = $postManager->getPost($_GET['id']);
 	//$comments = $commentManager->getComments($_GET['id']);
+	require('view/frontend/postView.php');
+
+}*/
+
+
+function post() {
+	$postManager = new Postmanager();
+	$commentManager = new CommentManager();
+	$post = $postManager->getPost($_GET['id']);
+	$posts = $postManager->getPosts();
+	$comments = $commentManager->getComments($_GET['id']);
 	
 	require('view/frontend/postView.php');
 
 }
 
-
 function addComment($postId, $author, $comment) {
-	$commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+	$commentManager = new CommentManager();
 	$affectedlines = $commentManager->postComment($postId, $author, $comment);
 
-	if ($affectedlines === false) {
-		throw new Exception('Impossibel d\'ajouter le commentaire !');
-	}
-	else {
-		header('location: index.php?action=post&id=' . $postId);
-	}
+		if ($affectedlines === false) {
+			throw new Exception('Impossibel d\'ajouter le commentaire !');
+		}
+		else {
+			header('location: index.php?action=post&amp;id=' . $postId);
+		}
+}
 
-function newComment($commentId, $upComment, $postId) {
+ /*newComment($commentId, $upComment, $postId) {
 	$commentManager = new \OpenClassroom\Blog\Model\CommentManager();
 	$affectedComments = $commentManager->updateComment($commentId, $upComment);
 	require ('view/frontend/commentView.php');
@@ -46,6 +65,4 @@ function newComment($commentId, $upComment, $postId) {
 }
 
 }*/
-
-?>
 

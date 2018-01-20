@@ -1,8 +1,7 @@
 
- <?php
-  //require('controller/frontend.php'); ?>
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <a class="navbar-brand js-scroll-trigger" href="index.php">
         <span class="d-block d-lg-none">Menu</span>
         <span class="d-none d-lg-block">
           <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="public/img/profile.jpg" alt="">
@@ -15,18 +14,22 @@
         <ul class="navbar-nav">
           
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="index.php?action=listPosts>">Episodes</a>
+            <a class="nav-link js-scroll-trigger" href="index.php?action=listPosts">Episodes</a>
           </li>
           <li class="nav-item">
           	
-          	<?php /*
-            while ($liste_chapitres = $posts->fetch()) 
-            { ?> 
-            	<a href="article.php?recupid=<?php echo $liste_chapitres['id']; ?>" style="color:white;"><?php echo htmlspecialchars($liste_chapitres['title']) ?> </a> <br />
-              <?php
-            }
-            
-            */?>
+          	<?php
+
+while ($data = $posts->fetch()) 
+{
+?>
+  
+      <p><a href="index.php?action=post&amp;id=<?= $data['id'] ?>" style = "color:white;"><?php echo htmlspecialchars($data['title']); ?></a></p>
+    
+    <?php
+    }
+$posts->closeCursor();
+      ?>
            </li>
           
         </ul>
@@ -34,4 +37,4 @@
     </nav>	
 
  
-  
+ 

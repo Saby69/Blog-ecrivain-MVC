@@ -9,11 +9,9 @@
           <h1 class="mb-0">Billet simple
             <span class="text-primary">pour l'Alaska</span>
           </h1>
-        </div>
-      </section>
-</div>
-
-
+          
+          
+            
 
 
 <?php
@@ -22,17 +20,20 @@ while ($data = $posts->fetch())
 {
 ?>
 	<div class="news">
-		<h3> 
-			<?php echo htmlspecialchars($data['title']); ?> le 
+		<h2> 
+			<?php echo htmlspecialchars($data['title']); ?>
 			
-		</h3> 
+		</h2> 
+		
+  		<em><?php echo htmlspecialchars($data['datecreation']); ?> </em><br />
 
 
 		<p> 
 			<?php 
-			echo nl2br(htmlspecialchars($data['content'])); 
+			echo substr(htmlspecialchars($data['content']), 0, 300); 
 			?> 
 			<br />
+			<a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire la suite...</a>
 			<!--<em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>-->
 		</p>
 	</div>
@@ -43,3 +44,5 @@ $posts->closeCursor();
 
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>
+
+

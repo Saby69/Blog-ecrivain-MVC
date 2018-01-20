@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <<title><?= $title ?></title>
+    <title><?= $title ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -17,7 +17,7 @@
     
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="public/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="public/vendor/devicons/css/devicons.min.css" rel="stylesheet">
     <link href="public/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
@@ -32,18 +32,23 @@
 	
 <body id="page-top">
 	<?php require('menu.php') ?>
-	<?= $content ?>
+    <div class="row"> 
+        <div class = col-lg-10>
+            <?= $content ?>
+        </div>
+    </div>
+	
 	<?php require('footer.php') ?>
 
 	<!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="public/vendor/jquery/jquery.min.js"></script>
+    <script src="public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="public/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/resume.min.js"></script>
+    <script src="public/js/resume.min.js"></script>
 
 </body>
 </html>
