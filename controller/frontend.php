@@ -3,6 +3,7 @@
 
 require_once('model/PostManager.php'); 
 require_once('model/CommentManager.php');
+require_once('model/UserManager.php');
 
 function listPosts() {
 	$postManager = new PostManager();
@@ -20,7 +21,7 @@ function index() {
 
 
 function post() {
-	$postManager = new Postmanager();
+	$postManager = new PostManager();
 	$commentManager = new CommentManager();
 	$post = $postManager->getPost($_GET['id']);
 	$posts = $postManager->getPosts();
@@ -31,7 +32,7 @@ function post() {
 }
 
 function addComment($postId, $author, $comment) {
-	$postManager = new Postmanager();
+	$postManager = new PostManager();
 	$commentManager = new CommentManager();
 	$affectedlines = $commentManager->postComment($postId, $author, $comment);
 
@@ -43,9 +44,15 @@ function addComment($postId, $author, $comment) {
 		}
 }
 
- function connexion () {
+ function connexion() {
  	$postManager = new PostManager();
 	$posts = $postManager->getPosts();
  	require('view/frontend/login.php');
+ }
+
+ function login() {
+ 	$userManager = new UserManager();
+ 	$user = $userManager->getUser();
+	
  }
 

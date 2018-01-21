@@ -1,5 +1,6 @@
 
 	<?php
+
 	require('controller/frontend.php');
 
 try {
@@ -28,28 +29,34 @@ try {
 					throw new Exception('aucun identifiant de billet');
 				}
 			}
-			elseif ($_GET['action'] == 'newComment') {
-				if (isset($_GET['id']) && $_GET['id'] > 0) {
-					if (!empty($_POST['comment'])) {
-					newComment($_GET['id'], $_POST['comment']);
-					}
-					else {
-						throw new Exception('Le champs n\'est pas remplis !');
-					}
-				}
-				else {
-					throw new Exception('Aucun identifiant !');
-				}	
-				
-			}
-
 			
+			elseif ($_GET['action'] == 'connexion') {
+				connexion();
+			}
+			elseif($_GET['action'] == 'login') { 
+				if (isset($_POST['user']) AND !empty($_POST['password'])) {
+            		if (!empty(htmlspecialchars($_POST['user'])) AND !empty(htmlspecialchars($_POST['password']))) {
+				                login($_POST['user'], $_POST['password']);
+				                header ('location: view/backend/index.php');
+				    }
+	                else {
+	                    
+	                   throw new Exception('L\'utilisateur n\'existe pas !');
+	                } 
+				}
+	            else {
+	                throw new Exception('Tous les champs ne sont pas remplis !');
+	            } 
+            	
+            }
 		}
 		else {
 			index();
 		}
 	}
 	catch(Exception $e)  {
+		$postManager = new PostManager();
+		$posts = $postManager->getPosts();
 		$errorMessage = $e->getMessage();
 		require('view/frontend/errorView.php');
 	}

@@ -1,8 +1,8 @@
 .bg-primary {
-    background-color: #395BBC!important;
+    background-color: #636274!important;
 }
 .text-primary {
-  color:  #395BBC !important; }
+  color:  #636274 !important; }
 
 a {
   color:  #395BBC; }
@@ -41,13 +41,4 @@ hr:after {
 	letter-spacing: 1em;
 	color: #aaa;
 }
-
-/*styles backend*/
-.bg-primary-be {
-    background-color: #1a192e!important;
-}
-.text-primary-be {
-  color:  #636273 !important; }
-
-
 
