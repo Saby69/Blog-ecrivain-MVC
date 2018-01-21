@@ -25,7 +25,7 @@ try {
 					}
 				}
 				else {
-					throw new Exception('aucun identifiant de billet envoyé');
+					throw new Exception('aucun identifiant de billet');
 				}
 			}
 			elseif ($_GET['action'] == 'newComment') {

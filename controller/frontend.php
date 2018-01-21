@@ -17,15 +17,6 @@ function index() {
 
 }
 
-/*function menu() {
-	$postManager = new PostManager();
-	//$commentManager = new CommentManager();
-	//$posts = $postManager->getPosts();
-	$post = $postManager->getPost($_GET['id']);
-	//$comments = $commentManager->getComments($_GET['id']);
-	require('view/frontend/postView.php');
-
-}*/
 
 
 function post() {
@@ -40,6 +31,7 @@ function post() {
 }
 
 function addComment($postId, $author, $comment) {
+	$postManager = new Postmanager();
 	$commentManager = new CommentManager();
 	$affectedlines = $commentManager->postComment($postId, $author, $comment);
 

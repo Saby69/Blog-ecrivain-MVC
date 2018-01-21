@@ -11,7 +11,6 @@
           </h1>
           
           
-            
 
 
 <?php
@@ -24,7 +23,7 @@ foreach ($posts as $data)
 			
 		</h2> 
 		
-  		<em><?php echo htmlspecialchars($data['datecreation']); ?> </em><br />
+  		<em><?php echo htmlspecialchars($data['date_creation_fr']); ?> </em><br />
 
 
 		<p> 
@@ -33,14 +32,13 @@ foreach ($posts as $data)
 			?> 
 			<br />
 			<a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire la suite...</a>
-<!--			<em><a href="index.php?action=post&amp;id=--><?//= $data['id'] ?><!--">Commentaires</a></em>-->
+<!--			
 		</p>
 	</div>
 		<?php
 		}
 			?>
 
-<?php $content = ob_get_clean(); ?>
+<?php $content = ob_get_clean(); ?> 
 
 <?php require('template.php'); ?>
-

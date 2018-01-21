@@ -12,7 +12,7 @@
          
             
 
-<p><a href="index.php">Retour à la liste des billets</a></p>
+<p><a href="index.php?action=listPosts">Retour à la liste des billets</a></p>
 
 <div class="news">
 	<h2> 
