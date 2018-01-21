@@ -31,15 +31,22 @@
 	
 	
 <body id="page-top">
-	<?php require('menu.php') ?>
+
+    <?php require('menu.php') ?>
+
     <div class="row"> 
         <div class = col-lg-10>
             <?= $content ?>
         </div>
     </div>
 	
-	<?php require('footer.php') ?>
+    <div class = "row">
+        <div class="col-lg-12">
+            <?php require('footer.php') ?>
+        </div>
 
+    </div>
+	
 	<!-- Bootstrap core JavaScript -->
     <script src="public/vendor/jquery/jquery.min.js"></script>
     <script src="public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

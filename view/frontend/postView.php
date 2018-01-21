@@ -60,6 +60,7 @@ while ($comment = $comments->fetch())
 		<input type="submit" name="envoyer" value="ok !">
 	</div>
 </form>
+</div>
 
 
 

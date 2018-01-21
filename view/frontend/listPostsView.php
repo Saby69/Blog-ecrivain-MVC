@@ -32,12 +32,13 @@ foreach ($posts as $data)
 			?> 
 			<br />
 			<a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire la suite...</a>
-<!--			
+			
 		</p>
 	</div>
 		<?php
 		}
 			?>
+</div>
 
 <?php $content = ob_get_clean(); ?> 
 

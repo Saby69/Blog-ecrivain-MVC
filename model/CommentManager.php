@@ -22,14 +22,7 @@ class CommentManager extends Manager {
 	return $affectedlines;
 	}
 
-	/*public function updateComment($commentId, $newComment) {
-		$db = $this->dbconnect();
-		$upComment = $db->prepare('UPDATE comments SET comment=? WHERE id=?');
-		$affectedComments = $comments->execute(array($commentId, $newComment));
-
-		return $affectedComments;
-
-	}*/
+	
 
 	
 }
