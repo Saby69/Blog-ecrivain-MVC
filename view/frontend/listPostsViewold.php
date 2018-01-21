@@ -15,7 +15,8 @@
 
 
 <?php
-foreach ($posts as $data)
+
+while ($data = $posts->fetch()) 
 {
 ?>
 	<div class="news">
@@ -33,14 +34,15 @@ foreach ($posts as $data)
 			?> 
 			<br />
 			<a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire la suite...</a>
-<!--			<em><a href="index.php?action=post&amp;id=--><?//= $data['id'] ?><!--">Commentaires</a></em>-->
+			<!--<em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>-->
 		</p>
 	</div>
 		<?php
 		}
+$posts->closeCursor();
 			?>
 
 <?php $content = ob_get_clean(); ?>
-
 <?php require('template.php'); ?>
+
 

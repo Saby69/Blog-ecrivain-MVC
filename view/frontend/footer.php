@@ -12,7 +12,7 @@
               </a>
             </div>
             <div class="col-lg-4">
-               	<a href="login.php">Connection</a>
+               	<a href="index.php?action=connexion">Connection</a>
             </div>
 
       </div>

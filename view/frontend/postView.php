@@ -34,6 +34,7 @@
 <h3>Commentaires</h3>
 <?php
 while ($comment = $comments->fetch()) 
+
 {
 ?>
 	<p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr']?><a href="# ?>"> (Signaler)</a></p>

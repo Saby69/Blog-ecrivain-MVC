@@ -51,18 +51,9 @@ function addComment($postId, $author, $comment) {
 		}
 }
 
- /*newComment($commentId, $upComment, $postId) {
-	$commentManager = new \OpenClassroom\Blog\Model\CommentManager();
-	$affectedComments = $commentManager->updateComment($commentId, $upComment);
-	require ('view/frontend/commentView.php');
-
-	if ($affectedComments === false) {
-		throw new Exception('Impossible de modifier le commentaire !');
-	}
-	else {
-		header('location: index.php?action=post&id=' . $postId);
-	}
-}
-
-}*/
+ function connexion () {
+ 	$postManager = new PostManager();
+	$posts = $postManager->getPosts();
+ 	require('view/frontend/login.php');
+ }
 

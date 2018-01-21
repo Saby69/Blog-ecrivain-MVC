@@ -19,8 +19,7 @@
           <li class="nav-item">
           	
           	<?php
-
-while ($data = $posts->fetch()) 
+foreach ($posts as $data)
 {
 ?>
   
@@ -28,7 +27,6 @@ while ($data = $posts->fetch())
     
     <?php
     }
-$posts->closeCursor();
       ?>
            </li>
           

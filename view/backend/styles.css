@@ -1,0 +1,15 @@
+.bg-primary {
+    background-color: #1a192e!important;
+}
+.text-primary {
+  color:  blue !important; }
+
+a {
+  color:  #1a192e; }
+  a:hover, a:focus, a:active {
+    color: #824027; }
+
+section {
+	padding-left: 200px !important;
+	padding-right: 
+}
