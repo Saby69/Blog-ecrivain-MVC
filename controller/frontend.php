@@ -3,7 +3,7 @@
 
 require_once('model/PostManager.php'); 
 require_once('model/CommentManager.php');
-require_once('model/UserManager.php');
+
 
 function listPosts() {
 	$postManager = new PostManager();
@@ -50,9 +50,5 @@ function addComment($postId, $author, $comment) {
  	require('view/frontend/login.php');
  }
 
- function login() {
- 	$userManager = new UserManager();
- 	$user = $userManager->getUser();
-	
- }
+ 
 

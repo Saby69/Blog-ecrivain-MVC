@@ -33,22 +33,7 @@ try {
 			elseif ($_GET['action'] == 'connexion') {
 				connexion();
 			}
-			elseif($_GET['action'] == 'login') { 
-				if (isset($_POST['user']) AND !empty($_POST['password'])) {
-            		if (!empty(htmlspecialchars($_POST['user'])) AND !empty(htmlspecialchars($_POST['password']))) {
-				                login($_POST['user'], $_POST['password']);
-				                header ('location: view/backend/index.php');
-				    }
-	                else {
-	                    
-	                   throw new Exception('L\'utilisateur n\'existe pas !');
-	                } 
-				}
-	            else {
-	                throw new Exception('Tous les champs ne sont pas remplis !');
-	            } 
-            	
-            }
+			
 		}
 		else {
 			index();

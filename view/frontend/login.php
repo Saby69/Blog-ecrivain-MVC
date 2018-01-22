@@ -12,7 +12,7 @@
           </h2>
           
           <!--<div class="error"><?php //if( ! empty( $error ) ) echo '    <p>', $error, '</p>' ?></div>-->
-          <form action="index.php?action=login" method="POST">
+          <form action="view/backend/index.php?action=login" method="POST">
           	<div class="row" style="padding-top: 10px;">
           		<div class="col-lg-4">Nom d'utilisateur</div>
 	      		<div class="col-lg-4"><input type="text" name="user" id="user"></div>
