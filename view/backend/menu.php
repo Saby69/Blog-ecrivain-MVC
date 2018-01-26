@@ -14,7 +14,7 @@
         <ul class="navbar-nav">
           
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#">Episodes</a>
+            <a class="nav-link js-scroll-trigger" href="index.php?action=postadmin">Episodes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#">Commentaires</a>	

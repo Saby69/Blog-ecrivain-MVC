@@ -24,7 +24,7 @@
 
 	<p> 
 		<?php 
-		echo nl2br(htmlspecialchars($post['content'])); 
+		echo nl2br($post['content']); 
 		?> 
 	</p>
 </div>
@@ -37,7 +37,7 @@ while ($comment = $comments->fetch())
 
 {
 ?>
-	<p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr']?><a href="# ?>"> (Signaler)</a></p>
+	<p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr']?><a href="#"> (Signaler)</a></p>
 	<p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
 
 <?php

@@ -28,7 +28,7 @@ foreach ($posts as $data)
 
 		<p> 
 			<?php 
-			echo substr(htmlspecialchars($data['content']), 0, 300); 
+			echo substr($data['content'], 0, 300); 
 			?> 
 			<br />
 			<a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire la suite...</a>
@@ -38,7 +38,7 @@ foreach ($posts as $data)
 		<?php
 		}
 			?>
-</div>
+
 
 <?php $content = ob_get_clean(); ?> 
 

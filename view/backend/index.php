@@ -5,30 +5,55 @@ require('../../controller/backend.php');
 try {
 		if (isset($_GET['action'])) {
 			if ($_GET['action'] == 'login') {
-				 
 			    if (isset($_POST['password']) AND isset($_POST['user'])) {
 			    	login();
-
-				   				} 
+				} 
 				else {
-				echo 'Mauvais identifiant ou mot de passe !';
+				throw new Exception('Mauvais identifiant ou mot de passe !');
 				}
  			}
-		
-			else {
-			
-    			echo 'Mauvais identifiant ou mot de passe !';	
+
+			elseif ($_GET['action'] == 'postadmin'){
+				postadmin();
 			}
-			
+
+			elseif ($_GET['action'] == 'post') {
+				if (isset($_GET['id']) && $_GET['id'] > 0) {
+					post();
+				}
+				else {
+					throw new Exception('aucun identifiant de billet');
+				}
+			}
+
+			elseif ($_GET['action'] == 'addpost') {
+				addpost();
+			}
+
+			elseif ($_GET['action'] == 'modifypost') {
+				if (isset($_GET['id']) && $_GET['id'] > 0) {
+					
+						modifypost($_GET['id'], $_POST['title'], $_POST['content']);
+				}
+				else {
+					throw new Exception('aucun identifiant de billet');
+				}
+			}
+
+			elseif ($_GET['action'] == 'deletepost') {
+				deletepost($_GET['id']);
+			}
+
 		}
 		else {
-			formconnexion();
-		}
+			index();
+		} 
 		
+}
+catch(Exception $e)  {
+	$errorMessage = $e->getMessage();
+	require('../../view/frontend/errorView.php');
 	}
-	catch(Exception $e)  {
-		$errorMessage = $e->getMessage();
-		require('errorView.php');
-	}
+?>
 	
 

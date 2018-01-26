@@ -25,6 +25,9 @@
     <link href="../../public/css/resume.min.css" rel="stylesheet">
      <link href="../../public/css/styles-backend.css" rel="stylesheet">
 
+     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+     <script>tinymce.init({ selector:'textarea' });</script>
+
 
   </head>
 	
