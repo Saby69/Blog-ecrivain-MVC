@@ -50,5 +50,11 @@ function addComment($postId, $author, $comment) {
  	require('view/frontend/login.php');
  }
 
+function alert($id, $alert) {
+	$commentManager = new CommentManager();
+	$alertcomment = $commentManager->alertcomment($_GET['id']);
+	$alertcomment = 1 ;
+
+}
  
 
