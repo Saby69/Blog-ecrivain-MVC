@@ -44,6 +44,21 @@ try {
 				deletepost($_GET['id']);
 			}
 
+			elseif ($_GET['action'] == 'addalert'){
+				alertcomment();
+				
+			}
+
+			elseif ($_GET['action'] == 'changealert'){
+				if (isset($_GET['id']) && $_GET['id'] > 0) {
+				changealert();
+				}
+				else {
+					throw new Exception('ce commentaire n\'a pas pu être modéré');
+					
+				}
+			}
+
 		}
 		else {
 			index();

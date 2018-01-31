@@ -28,7 +28,7 @@ foreach ($posts as $data)
 		  	<table class="table">
 		    	<tr>
 		    		<td><?php echo htmlspecialchars($data['title']); ?></td>
-		    		<td><?php echo $data['content']; ?> </td>
+		    		<td><?php echo substr($data['content'], 0 ,300); ?> </td>
 		    		<td><em><?php echo htmlspecialchars($data['date_creation_fr']); ?> </em><br /></td>
 		    		<td><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">modifier</a></td>
 		    		<td><a href="index.php?action=deletepost&amp;id=<?=$data['id'] ?>">supprimer</a></td>

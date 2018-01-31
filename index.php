@@ -34,9 +34,14 @@ try {
 				connexion();
 			}
 
-			elseif ($_GET['action'] == 'alertcomment') {
+			
+			elseif ($_GET['action'] == 'alertcom'){
 				if (isset($_GET['id']) && $_GET['id'] > 0) {
-				alert();
+				alertcom();
+				}
+				else {
+					throw new Exception('ce commentaire n\'a pas pu être modéré');
+					
 				}
 			}
 			

@@ -17,7 +17,7 @@
             <a class="nav-link js-scroll-trigger" href="index.php?action=postadmin">Episodes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#">Commentaires</a>	
+            <a class="nav-link js-scroll-trigger" href="index.php?action=addalert">Commentaires</a>	
           </li>
           
         </ul>

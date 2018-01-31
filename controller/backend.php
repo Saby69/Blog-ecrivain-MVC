@@ -64,10 +64,20 @@ function deletepost($id) {
 	header('location:index.php?action=postadmin'); die();
 }
 
-function alert($id) {
+function alertcomment() {
 	$commentManager = new CommentManager();
-	$alert = $commentManager->postComment($_GET['id'], $_GET['alert']);
+	$comments = $commentManager->adminComments();
+	require('listcommentViewAdmin.php');
 }
+
+function changealert() {
+	$commentManager = new CommentManager();
+	$comments = $commentManager->adminComments();
+	$comment = $commentManager->alertComment($_GET['id']);
+	require('listcommentViewAdmin.php');
+}
+
+
 
 ?>
 

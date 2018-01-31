@@ -27,6 +27,7 @@ function post() {
 	$posts = $postManager->getPosts();
 	$comments = $commentManager->getComments($_GET['id']);
 	
+	
 	require('view/frontend/postView.php');
 
 }
@@ -50,11 +51,18 @@ function addComment($postId, $author, $comment) {
  	require('view/frontend/login.php');
  }
 
-function alert($id, $alert) {
+function alertcom() {
 	$commentManager = new CommentManager();
-	$alertcomment = $commentManager->alertcomment($_GET['id']);
-	$alertcomment = 1 ;
-
+	$postManager = new PostManager();
+	$post = $postManager->getPost($_GET['id']);
+	$posts = $postManager->getPosts();
+	$comments = $commentManager->getComments($_GET['id']);
+	$comment = $commentManager->alertCommentFront($_GET['id']);
+	require('view/frontend/postView.php');
 }
+	
+	
+
+
  
 
