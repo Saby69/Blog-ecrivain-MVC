@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php $title = 'Login'; ?>
 
 <?php ob_start(); ?>

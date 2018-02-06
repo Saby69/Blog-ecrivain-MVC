@@ -1,3 +1,5 @@
+
+?>
 <?php $title = 'Modifier article'; ?>
 	
 <?php ob_start(); ?>

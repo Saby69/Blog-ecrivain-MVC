@@ -1,3 +1,10 @@
+<?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,6 +42,18 @@
 	
 <body id="page-top">
 
+    <?php 
+    
+    if (isset($_SESSION['is_connect'])) {
+        $connect = $_SESSION['is_connect'];
+    }
+    else {
+        $connect=0;
+    }
+    if ($connect == "1") {
+        
+    ?>
+
     <?php require('menu.php') ?>
 
     <div class="row"> 
@@ -59,6 +78,13 @@
 
     <!-- Custom scripts for this template -->
     <script src="../../public/js/resume.min.js"></script>
+
+   <?php // On affiche la page cachée.
+    }
+    else {
+        header('location: ../../index.php?action=connexion'); //redirection vers page de login
+    }
+    ?>
 
 </body>
 </html>

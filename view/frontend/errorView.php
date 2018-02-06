@@ -1,3 +1,4 @@
+
 <?php $title = 'Erreur'; ?>
 <?php ob_start(); ?>
 

@@ -1,3 +1,4 @@
+
 <?php $title = 'Billet simple'; ?>
 	
 <?php ob_start(); ?>
@@ -12,7 +13,7 @@
           
   <br />
   <br />
-		<h4><a href="index.php?action=addpost">Ajouter un épisode</a></h4>    
+		<h5><a href="index.php?action=directaddpost">Ajouter un épisode</a></h5>    
 		<br />
   <br />    
 
@@ -27,11 +28,11 @@ foreach ($posts as $data)
 		<div class="table-responsive">
 		  	<table class="table">
 		    	<tr>
-		    		<td><?php echo htmlspecialchars($data['title']); ?></td>
-		    		<td><?php echo substr($data['content'], 0 ,300); ?> </td>
-		    		<td><em><?php echo htmlspecialchars($data['date_creation_fr']); ?> </em><br /></td>
-		    		<td><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">modifier</a></td>
-		    		<td><a href="index.php?action=deletepost&amp;id=<?=$data['id'] ?>">supprimer</a></td>
+		    		<td width="10%"><?php echo htmlspecialchars($data['title']); ?></td>
+		    		<td width="60%"><?php echo substr($data['content'], 0 ,300); ?> </td>
+		    		<td width="10%"><em><?php echo htmlspecialchars($data['date_creation_fr']); ?> </em><br /></td>
+		    		<td width="10%"><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">modifier</a></td>
+		    		<td width="10%"><a href="index.php?action=deletepost&amp;id=<?=$data['id'] ?>">supprimer</a></td>
 		    	</tr>
 
 		  	</table>

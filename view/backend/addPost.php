@@ -1,4 +1,5 @@
-<?php $title = 'Ajout article'; ?>
+
+
 	
 <?php ob_start(); ?>
 <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">

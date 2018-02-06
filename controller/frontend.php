@@ -53,12 +53,10 @@ function addComment($postId, $author, $comment) {
 
 function alertcom() {
 	$commentManager = new CommentManager();
-	$postManager = new PostManager();
-	$post = $postManager->getPost($_GET['id']);
-	$posts = $postManager->getPosts();
-	$comments = $commentManager->getComments($_GET['id']);
+	$comments = $commentManager->getCommentsById($_GET['id']);
 	$comment = $commentManager->alertCommentFront($_GET['id']);
-	require('view/frontend/postView.php');
+	header('location: index.php?action=post&id='. $comments['post_id']);
+	
 }
 	
 	

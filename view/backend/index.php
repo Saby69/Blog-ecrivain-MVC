@@ -1,5 +1,6 @@
 <?php
-	
+	session_start();
+
 require('../../controller/backend.php');
 
 try {
@@ -27,7 +28,16 @@ try {
 			}
 
 			elseif ($_GET['action'] == 'addpost') {
-				addpost();
+				if (!empty($_POST['title']) AND !empty($_POST['content'])) {
+			    	addpost();
+				} 
+				else {
+				throw new Exception('pb champs');
+				}
+			}
+
+			elseif ($_GET['action'] == 'directaddpost') {
+				directaddpost();
 			}
 
 			elseif ($_GET['action'] == 'modifypost') {
@@ -44,6 +54,10 @@ try {
 				deletepost($_GET['id']);
 			}
 
+			elseif ($_GET['action'] == 'deletecomment') {
+				deletecomment($_GET['id']);
+			}
+
 			elseif ($_GET['action'] == 'addalert'){
 				alertcomment();
 				
@@ -57,6 +71,30 @@ try {
 					throw new Exception('ce commentaire n\'a pas pu être modéré');
 					
 				}
+			}
+
+			elseif ($_GET['action'] == 'approvecom'){
+				if (isset($_GET['id']) && $_GET['id'] > 0) {
+				approvecom();
+				}
+				else {
+					throw new Exception('ce commentaire n\'a pas pu être modéré');
+					
+				}
+			}
+
+			elseif ($_GET['action'] == 'restore'){
+				if (isset($_GET['id']) && $_GET['id'] > 0) {
+				restore();
+				}
+				else {
+					throw new Exception('ce commentaire n\'a pas pu être modéré');
+					
+				}
+			}
+
+			elseif ($_GET['action'] == 'oldcomments') {
+				oldcomments();
 			}
 
 		}

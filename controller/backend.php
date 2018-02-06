@@ -1,25 +1,31 @@
 <?php
+
 require_once('../../model/UserManager.php');
 require_once('../../model/PostManager.php');
 require_once('../../model/CommentManager.php');
 
-function index() {
-	require('backendView.php');
-}
 
 function login() {
+	session_start();
+	$_SESSION['is_connect']=0;
  	$userManager = new UserManager();
  	$user = $userManager;
  	$password = $userManager;
  	$result = $userManager->getUser($user, $password);
-
+ 	
 		if ($result === false) {
 			$error='L\'utilisateur n\'existe pas !';
             header ('location:../../index.php?action=connexion&error=' . $error);
 		}
 		else {
+			$_SESSION['is_connect'] = 1 ;
 			header('location: backendView.php');
 		}
+
+}
+
+function index() {
+	require('backendView.php');
 }
 
 function postadmin() {
@@ -46,12 +52,18 @@ function addpost() {
 
 }
 
+function directaddpost() {
+
+	require('addPost.php');
+}
+
 function modifypost($id, $title, $content) {
 	$postManager = new PostManager();
 	$posts = $postManager->getPosts();
 
 	if (isset($_POST['title']) && isset($_POST['content'])) {
 		$modify = $postManager->modifyPost($id, $title, $content);
+		header('location:index.php?action=postadmin'); die();
 
 	}
 	require('listPostsViewAdmin.php');
@@ -64,6 +76,13 @@ function deletepost($id) {
 	header('location:index.php?action=postadmin'); die();
 }
 
+function deletecomment($id) {
+	$commentManager = new CommentManager();
+	$comments = $commentManager->adminComments();
+	$delete = $commentManager->deleteComment($_GET['id']);
+	header('location:index.php?action=oldcomments'); die();
+}
+
 function alertcomment() {
 	$commentManager = new CommentManager();
 	$comments = $commentManager->adminComments();
@@ -74,7 +93,26 @@ function changealert() {
 	$commentManager = new CommentManager();
 	$comments = $commentManager->adminComments();
 	$comment = $commentManager->alertComment($_GET['id']);
-	require('listcommentViewAdmin.php');
+	header('location:index.php?action=addalert'); die();
+}
+
+function approvecom() {
+	$commentManager = new CommentManager();
+	$comments = $commentManager->adminComments();
+	$comment = $commentManager->approveComment($_GET['id']);
+	header('location:index.php?action=addalert'); die();
+}
+
+function restore() {
+	$commentManager = new CommentManager();
+	$comments = $commentManager->adminComments();
+	$comment = $commentManager->alertCommentFront($_GET['id']);
+	header('location:index.php?action=addalert'); die();
+}
+function oldcomments() {
+	$commentManager = new CommentManager();
+	$comments = $commentManager->getCommentsOldComments();
+	require('listoldcomments.php');
 }
 
 
