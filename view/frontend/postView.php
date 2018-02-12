@@ -37,7 +37,7 @@ while ($comment = $comments->fetch())
 
 {
 ?>
-	<p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr']?><a href="index.php?action=alertcom&amp;id=<?=$comment['id'] ?>">  (Signaler)</a></p>
+	<p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr']?> &nbsp;&nbsp;&nbsp;<a type="submit" class="btn-sm btn-danger" id="button" href="index.php?action=alertcom&amp;id=<?=$comment['id'] ?>" role="button">Signaler</a></p>
 	<p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
 
 <?php
@@ -46,7 +46,7 @@ while ($comment = $comments->fetch())
 
 <hr />
 <h3>Ajouter un commentaire</h3>
-
+<div class="error"><?php if(!empty($_GET['error'])) echo '    <p>', $_GET['error'], '</p>' ?></div>
 <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="POST">
 	<div>
 		<label for="author">Auteur</label><br />

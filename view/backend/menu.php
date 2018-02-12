@@ -19,7 +19,9 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="index.php?action=addalert">Commentaires</a>	
           </li>
-          
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="../../index.php?action=connexion&error=Vous avez bien été déconnecté !">Déconnection</a> 
+          </li>
         </ul>
       </div>
     </nav>	

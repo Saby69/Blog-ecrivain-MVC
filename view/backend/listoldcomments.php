@@ -37,7 +37,7 @@
 				    		<td><?php echo htmlspecialchars($data['author']); ?></td>
 				    		<td><?php echo $data['comment']; ?> </td>
 				    		<td><em><?php echo htmlspecialchars($data['comment_date_fr']); ?> </em><br /></td>
-				    		<td><a href="index.php?action=restore&amp;id=<?=$data['id'] ?>">Restaurer</a> | <a href="index.php?action=deletecomment&amp;id=<?=$data['id'] ?>">Supprimer définitivement</a></td>
+				    		<td><a href="index.php?action=restore&amp;id=<?=$data['id'] ?>">Restaurer</a> | <a href="index.php?action=deletecomment&amp;id=<?=$data['id'] ?>" id="link">Supprimer définitivement</a></td>
 				    	</tr>
 				 <?php
 					}

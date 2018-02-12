@@ -1,7 +1,7 @@
 <?php
     if(!isset($_SESSION)) 
     { 
-        session_start(); 
+                session_start(); 
     } 
 ?>
 
@@ -31,9 +31,26 @@
     <!-- Custom styles for this template -->
     <link href="../../public/css/resume.min.css" rel="stylesheet">
      <link href="../../public/css/styles-backend.css" rel="stylesheet">
-
+     
+     <!-- Editeur -->
      <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
      <script>tinymce.init({ selector:'textarea' });</script>
+     
+     <!--boite d'alerte-->
+     <script src="../../public/vendor/jquery/jquery.js"></script>
+     <script type="text/javascript">
+            $(document).ready(function() {
+                // Basic confirmation
+                $("#link").popConfirm();
+                
+                // Custom Title, Content and Placement
+                $("#button").popConfirm({
+                    title: "Really ?",
+                    content: "I have warned you !",
+                    placement: "bottom"
+                });
+            });
+        </script>
 
 
   </head>
@@ -42,15 +59,15 @@
 	
 <body id="page-top">
 
-    <?php 
+    <?php
     
-    if (isset($_SESSION['is_connect'])) {
+    /*if (isset($_SESSION['is_connect'])) {
         $connect = $_SESSION['is_connect'];
     }
     else {
         $connect=0;
     }
-    if ($connect == "1") {
+    if ($connect == "1") {*/
         
     ?>
 
@@ -78,12 +95,13 @@
 
     <!-- Custom scripts for this template -->
     <script src="../../public/js/resume.min.js"></script>
+    <script src="../../public/vendor/jquery/jquery.popconfirm.js"></script>
 
-   <?php // On affiche la page cachée.
-    }
+  <?php // On affiche la page cachée.
+    /*}
     else {
         header('location: ../../index.php?action=connexion'); //redirection vers page de login
-    }
+    }*/
     ?>
 
 </body>

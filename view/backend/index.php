@@ -6,12 +6,17 @@ require('../../controller/backend.php');
 try {
 		if (isset($_GET['action'])) {
 			if ($_GET['action'] == 'login') {
-			    if (isset($_POST['password']) AND isset($_POST['user'])) {
+				if (!empty($_POST['user']) AND !empty($_POST['password'])) {
 			    	login();
 				} 
 				else {
-				throw new Exception('Mauvais identifiant ou mot de passe !');
+				$error ='Tous les champs ne sont pas remplis !';
+				header('location: ../../index.php?action=connexion&error=' . $error);
 				}
+					
+						
+				
+				
  			}
 
 			elseif ($_GET['action'] == 'postadmin'){

@@ -12,7 +12,7 @@
             <span class="text-primary">d'administration</span>
           </h2>
           
-          <div class="error"><?php if( ! empty($_GET['error'] ) ) echo '    <p>', $_GET['error'], '</p>' ?></div>
+          <div class="error"><?php if(!empty($_GET['error'])) echo '    <p>', $_GET['error'], '</p>' ?></div>
           <form action="view/backend/index.php?action=login" method="POST">
           	<div class="row" style="padding-top: 10px;">
           		<div class="col-lg-4">Nom d'utilisateur</div>

@@ -25,6 +25,21 @@
     <link href="public/css/resume.min.css" rel="stylesheet">
      <link href="public/css/styles.css" rel="stylesheet">
 
+     <script src="public/vendor/jquery/jquery.js"></script>
+     <script type="text/javascript">
+            $(document).ready(function() {
+                // Basic confirmation
+                $("#link").popConfirm();
+                
+                // Custom Title, Content and Placement
+                $("#button").popConfirm({
+                    title: "Signaler",
+                    content: "Etes vous sur de vouloir signaler ce commentaire ?",
+                    placement: "bottom"
+                });
+            });
+        </script>
+
 
   </head>
 	
@@ -53,6 +68,7 @@
 
     <!-- Plugin JavaScript -->
     <script src="public/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="public/vendor/jquery/jquery.popconfirm.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="public/js/resume.min.js"></script>

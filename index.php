@@ -22,7 +22,8 @@ try {
 						addComment($_GET['id'], $_POST['author'], $_POST['comment']);
 					}
 					else {
-						throw new Exception('tous les champs ne sont pas remplis !');
+						$error = 'Tous les champs ne sont pas remplis !';
+						header('location: index.php?action=post&id=' . $_GET['id'] . "&error=" . $error);
 					}
 				}
 				else {
@@ -31,7 +32,9 @@ try {
 			}
 			
 			elseif ($_GET['action'] == 'connexion') {
-				connexion();
+				
+					connexion();
+				
 			}
 
 			
