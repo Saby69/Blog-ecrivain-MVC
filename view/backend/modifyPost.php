@@ -15,7 +15,7 @@
 
 	<form action="index.php?action=modifypost&amp;id=<?= $post['id']?>" method="POST">
 		<input type = "text" name="title" id="title" value="<?php echo $post['title'];?>"><br /><br />
-		<textarea name="content" id="content"><?php echo $post['content'];?></textarea><br />
+		<textarea rows="15" name="content" id="content"><?php echo $post['content'];?></textarea><br />
 		<input class="btn-primary" type="submit" name="Envoyer" value="Modifier l'épisode">
 
 	</form>

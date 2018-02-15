@@ -34,17 +34,17 @@
      
      <!-- Editeur -->
      <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-     <script>tinymce.init({ selector:'textarea' });</script>
+     <script>tinymce.init({ selector:'textarea', language_url : '../../public/langs/fr_FR.js' });</script>
      
      <!--boite d'alerte-->
      <script src="../../public/vendor/jquery/jquery.js"></script>
      <script type="text/javascript">
             $(document).ready(function() {
                 // Basic confirmation
-                $("#link").popConfirm();
+                $(".link").popConfirm();
                 
                 // Custom Title, Content and Placement
-                $("#button").popConfirm({
+                $(".button").popConfirm({
                     title: "Really ?",
                     content: "I have warned you !",
                     placement: "bottom"

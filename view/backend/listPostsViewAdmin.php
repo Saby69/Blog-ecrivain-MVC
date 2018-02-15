@@ -34,7 +34,7 @@ foreach ($posts as $data)
 		    		<td width="60%"><?php echo substr($data['content'], 0 ,300); ?> </td>
 		    		<td width="10%"><em><?php echo htmlspecialchars($data['date_creation_fr']); ?> </em><br /></td>
 		    		<td width="10%"><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">modifier</a></td>
-		    		<td width="10%"><a href="index.php?action=deletepost&amp;id=<?=$data['id'] ?>" id="link">supprimer</a></td>
+		    		<td width="10%"><a href="index.php?action=deletepost&amp;id=<?=$data['id'] ?>" class="link">supprimer</a></td>
 		    	</tr>
 
 		  	</table>

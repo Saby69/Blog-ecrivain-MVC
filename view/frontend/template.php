@@ -29,10 +29,10 @@
      <script type="text/javascript">
             $(document).ready(function() {
                 // Basic confirmation
-                $("#link").popConfirm();
+                $(".link").popConfirm();
                 
                 // Custom Title, Content and Placement
-                $("#button").popConfirm({
+                $(".button").popConfirm({
                     title: "Signaler",
                     content: "Etes vous sur de vouloir signaler ce commentaire ?",
                     placement: "bottom"

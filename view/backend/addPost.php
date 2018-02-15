@@ -1,4 +1,4 @@
-
+<?php $title = 'Ajout chapitre'; ?>
 
 	
 <?php ob_start(); ?>
@@ -14,7 +14,7 @@
 
 	<form action="index.php?action=addpost" method="POST">
 		<input type = "text" name="title" id="title" value="Titre"><br /><br />
-		<textarea name="content" id="content"></textarea><br />
+		<textarea rows="15" cols="100" name="content" id="content"></textarea><br />
 		<input class="btn-primary" type="submit" name="Envoyer" value="Ajouter épisode">
 
 	</form>
