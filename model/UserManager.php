@@ -13,6 +13,7 @@ class UserManager extends Manager {
                 $req -> execute(array(
                 'user' => $_POST ['user'],
                 'password' => $_POST['password']));
+        
         $result = $req->fetch();
 		
 		return $result;
