@@ -5,24 +5,24 @@ require_once('../../model/PostManager.php');
 require_once('../../model/CommentManager.php');
 
 
-function login() {
 
+
+function login()
+{
 	$_SESSION['is_connect']=0;
  	$userManager = new UserManager();
- 	$user = $userManager;
- 	$password = $userManager;
- 	$result = $userManager->getUser($user, $password);
- 	$hash = $_POST['password'];
-		if (password_verify($_POST['password'],$hash) && isset($_POST['user'])) {
-			$_SESSION['is_connect'] = 1 ;
-			header('location: backendView.php');
-    
-} else {
-    $error='L\'utilisateur n\'existe pas !';
-            header ('location:../../index.php?action=connexion&error=' . $error);
-}	
- 		
-
+ 	$username = $_POST['user'];
+ 	$password = $_POST['password'];
+ 	$user = $userManager->getUser($username, $password);
+ 	$hashed_password = password_hash($password,PASSWORD_DEFAULT);
+	if(password_verify($password,$hashed_password)) {
+		$_SESSION['username'] = $username;
+		$_SESSION['is_connect'] = 1;
+		header('location: index.php');
+	} else {
+		$error='L\'utilisateur n\'existe pas !';
+		header ('location:../../index.php?action=connexion&error=' . $error);
+	}
 }
 
 function index() {

@@ -9,7 +9,7 @@
         	<h2 class="mb-0">Espace
             <span class="text-primary">d'administration</span>
           </h2>
-          
+          <h3>Bonjour <?php echo $_SESSION['username']; ?></h3>
 
           
         </div>
