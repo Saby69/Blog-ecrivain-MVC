@@ -7,19 +7,19 @@ require_once('../../model/CommentManager.php');
 
 
 
-function login()
-{
+function login() {
 	$_SESSION['is_connect']=0;
  	$userManager = new UserManager();
  	$username = $_POST['user'];
  	$password = $_POST['password'];
  	$user = $userManager->getUser($username, $password);
- 	$hashed_password = password_hash($password,PASSWORD_DEFAULT);
-	if(password_verify($password,$hashed_password)) {
+
+	if (password_verify($user,$hashed_password)) {
 		$_SESSION['username'] = $username;
 		$_SESSION['is_connect'] = 1;
 		header('location: index.php');
-	} else {
+	} 
+	else {
 		$error='L\'utilisateur n\'existe pas !';
 		header ('location:../../index.php?action=connexion&error=' . $error);
 	}
